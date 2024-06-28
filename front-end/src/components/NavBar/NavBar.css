@@ -1,60 +1,111 @@
-.navbar{
-    padding: 20px 0px;
+.navbar {
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
 
-}
 .navbar .logo {
-    width: 150px; 
+    width: 150px;
 }
-.navbar-menu{
+
+.navbar-menu {
     display: flex;
     list-style: none;
     gap: 20px;
-    color : #49557e;
-font-size:  24px; 
+    color: #49557e;
+    font-size: 16px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
-.navbar-right{
+.navbar-right {
     display: flex;
     align-items: center;
     gap: 40px;
-
 }
+
 .navbar button {
-background: transparent;
-font-size: 24px;
-color: #49557e;
-border: 1px solid tomato;
-padding: 10px 30px;
-border-radius:  50px;
-cursor: pointer;
-transition: 0.3s;
-}
-.navbar button:hover {
-    background-color:  #fff4f2;
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.navbar .active{
+.navbar button:hover {
+    background-color: #fff4f2;
+}
+
+.navbar .active {
     padding-bottom: 2px;
     border-bottom: 2px solid #49557e;
 }
 
-.navbar li{
+.navbar li {
     cursor: pointer;
 }
 
-.navbar-search-icon{
+.navbar-search-icon {
     position: relative;
 }
-.navbar-search-icon .dot{
 
+.navbar-search-icon .dot {
     position: absolute;
     min-width: 10px;
     min-height: 10px;
     background-color: tomato;
     border-radius: 5px;
-    top:-8px;
-    right:-8px;
+    top: -8px;
+    right: -8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .navbar-right {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .navbar button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-menu {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .navbar-right {
+        gap: 10px;
+    }
+
+    .navbar button {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
 }
